@@ -1,5 +1,5 @@
 {
-  "name": "doc-to-md",
+  "name": "mdize",
   "version": "0.1.0",
   "description": "Convert documents (PDF, DOCX, PPTX, XLSX, HTML, CSV, images, XML) to Markdown",
   "type": "module",

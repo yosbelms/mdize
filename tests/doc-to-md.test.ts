@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { describe, it, expect } from "vitest";
-import { DocToMd, UnsupportedFormatError } from "../src/index.js";
+import { Mdize, UnsupportedFormatError } from "../src/index.js";
 
 const TEST_FILES = join(import.meta.dirname, "test-files");
 
@@ -71,8 +71,8 @@ const TEST_VECTORS: TestVector[] = [
   },
 ];
 
-describe("DocToMd (integration)", () => {
-  const converter = new DocToMd();
+describe("Mdize (integration)", () => {
+  const converter = new Mdize();
 
   describe("convertFile", () => {
     for (const vector of TEST_VECTORS) {
@@ -150,7 +150,7 @@ describe("DocToMd (integration)", () => {
 
   describe("custom converter registration", () => {
     it("allows registering custom converters", async () => {
-      const custom = new DocToMd({ enableBuiltins: false });
+      const custom = new Mdize({ enableBuiltins: false });
 
       custom.register({
         accepts: (_input, info) => info.extension === ".custom",

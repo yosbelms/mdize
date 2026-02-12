@@ -1,4 +1,4 @@
-# DocToMd
+# Mdize
 
 Convert documents to Markdown, preserving their structure (headings, lists, tables, links, images). The Markdown output is designed to be processed by AI, not humans.
 
@@ -21,7 +21,7 @@ An attempt to port to TypeScript [markitdown](https://github.com/microsoft/marki
 ## Installation
 
 ```bash
-npm install doc-to-md
+npm install mdize
 ```
 
 Requires Node.js >= 18.
@@ -29,9 +29,9 @@ Requires Node.js >= 18.
 ## Usage
 
 ```typescript
-import { DocToMd } from "doc-to-md";
+import { Mdize } from "mdize";
 
-const converter = new DocToMd();
+const converter = new Mdize();
 
 // Convert a file
 const result = await converter.convertFile("document.pdf");
@@ -66,7 +66,7 @@ const result = await converter.convertBuffer(csvBuffer, {
 ### Custom Converters
 
 ```typescript
-import { DocToMd, DocumentConverter, PRIORITY_SPECIFIC } from "doc-to-md";
+import { Mdize, DocumentConverter, PRIORITY_SPECIFIC } from "mdize";
 
 class MyConverter extends DocumentConverter {
   accepts(input, info) {
@@ -78,13 +78,13 @@ class MyConverter extends DocumentConverter {
   }
 }
 
-const converter = new DocToMd();
+const converter = new Mdize();
 converter.register(new MyConverter(), PRIORITY_SPECIFIC);
 ```
 
 ## API
 
-### `DocToMd`
+### `Mdize`
 
 | Method | Description |
 |--------|-------------|

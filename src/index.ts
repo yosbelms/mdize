@@ -1,5 +1,5 @@
-export { DocToMd, PRIORITY_SPECIFIC, PRIORITY_GENERIC } from "./doc-to-md.js";
-export type { DocToMdOptions } from "./doc-to-md.js";
+export { Mdize, PRIORITY_SPECIFIC, PRIORITY_GENERIC } from "./mdize.js";
+export type { MdizeOptions } from "./mdize.js";
 export {
   DocumentConverter,
   type StreamInfo,
@@ -7,7 +7,7 @@ export {
   type ConvertOptions,
 } from "./base-converter.js";
 export {
-  DocToMdError,
+  MdizeError,
   UnsupportedFormatError,
   FileConversionError,
   MissingDependencyError,
