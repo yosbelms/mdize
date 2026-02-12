@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import TurndownService from "turndown";
+// @ts-ignore
 import { gfm } from "turndown-plugin-gfm";
 import {
   DocumentConverter,
