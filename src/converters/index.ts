@@ -1,0 +1,11 @@
+export { PlainTextConverter } from "./plain-text-converter.js";
+export { HtmlConverter, convertHtmlString } from "./html-converter.js";
+export { CsvConverter } from "./csv-converter.js";
+export { DocxConverter } from "./docx-converter.js";
+export { XlsxConverter } from "./xlsx-converter.js";
+export { PptxConverter } from "./pptx-converter.js";
+export { PdfConverter } from "./pdf-converter.js";
+export { ImageConverter } from "./image-converter.js";
+export { XmlRssConverter } from "./xml-rss-converter.js";
+export { detectTables, mergeMasterFormatNumbering } from "./table-detector.js";
+export type { PositionedWord, TableDetectorOptions } from "./table-detector.js";

@@ -1,0 +1,52 @@
+{
+  "name": "tomd",
+  "version": "0.1.0",
+  "description": "Convert documents (PDF, DOCX, PPTX, XLSX, HTML, CSV, images, XML) to Markdown",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "build": "npx tsc -d",
+    "clean": "find . -type f \\( -name \"*.js\" -o -name \"*.js.map\" -o -name \"*.d.ts\" -o -name \"*.d.ts.map\" \\) | grep -v \"./node_modules\" | xargs rm",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "csv-parse": "^6.1.0",
+    "exceljs": "^4.4.0",
+    "exif-reader": "^2.0.3",
+    "fast-xml-parser": "^5.3.5",
+    "file-type": "^21.3.0",
+    "iconv-lite": "^0.7.2",
+    "jschardet": "^3.1.4",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.11.0",
+    "pdfjs-dist": "^5.4.624",
+    "tesseract.js": "^7.0.0",
+    "turndown": "^7.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.2",
+    "@types/turndown": "^5.0.6",
+    "turndown-plugin-gfm": "^1.0.2",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
