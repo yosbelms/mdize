@@ -30,15 +30,15 @@ interface ConverterRegistration {
   priority: number;
 }
 
-export interface ToMdOptions {
+export interface DocToMdOptions {
   /** If false, no built-in converters are registered. Default: true */
   enableBuiltins?: boolean;
 }
 
-export class ToMd {
+export class DocToMd {
   private registrations: ConverterRegistration[] = [];
 
-  constructor(options?: ToMdOptions) {
+  constructor(options?: DocToMdOptions) {
     const enableBuiltins = options?.enableBuiltins ?? true;
     if (enableBuiltins) {
       this.registerBuiltins();

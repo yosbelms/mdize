@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { describe, it, expect } from "vitest";
-import { ToMd, UnsupportedFormatError } from "../src/index.js";
+import { DocToMd, UnsupportedFormatError } from "../src/index.js";
 
 const TEST_FILES = join(import.meta.dirname, "test-files");
 
@@ -71,8 +71,8 @@ const TEST_VECTORS: TestVector[] = [
   },
 ];
 
-describe("ToMd (integration)", () => {
-  const converter = new ToMd();
+describe("DocToMd (integration)", () => {
+  const converter = new DocToMd();
 
   describe("convertFile", () => {
     for (const vector of TEST_VECTORS) {
@@ -150,7 +150,7 @@ describe("ToMd (integration)", () => {
 
   describe("custom converter registration", () => {
     it("allows registering custom converters", async () => {
-      const custom = new ToMd({ enableBuiltins: false });
+      const custom = new DocToMd({ enableBuiltins: false });
 
       custom.register({
         accepts: (_input, info) => info.extension === ".custom",

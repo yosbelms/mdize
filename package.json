@@ -1,5 +1,5 @@
 {
-  "name": "tomd",
+  "name": "doc-to-md",
   "version": "0.1.0",
   "description": "Convert documents (PDF, DOCX, PPTX, XLSX, HTML, CSV, images, XML) to Markdown",
   "type": "module",

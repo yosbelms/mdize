@@ -1,4 +1,4 @@
-# ToMd
+# DocToMd
 
 Convert documents to Markdown, preserving their structure (headings, lists, tables, links, images). The Markdown output is designed to be processed by AI, not humans.
 
@@ -21,7 +21,7 @@ An attempt to port to TypeScript [markitdown](https://github.com/microsoft/marki
 ## Installation
 
 ```bash
-npm install tomd
+npm install doc-to-md
 ```
 
 Requires Node.js >= 18.
@@ -29,9 +29,9 @@ Requires Node.js >= 18.
 ## Usage
 
 ```typescript
-import { ToMd } from "tomd";
+import { DocToMd } from "doc-to-md";
 
-const converter = new ToMd();
+const converter = new DocToMd();
 
 // Convert a file
 const result = await converter.convertFile("document.pdf");
@@ -66,7 +66,7 @@ const result = await converter.convertBuffer(csvBuffer, {
 ### Custom Converters
 
 ```typescript
-import { ToMd, DocumentConverter, PRIORITY_SPECIFIC } from "tomd";
+import { DocToMd, DocumentConverter, PRIORITY_SPECIFIC } from "doc-to-md";
 
 class MyConverter extends DocumentConverter {
   accepts(input, info) {
@@ -78,13 +78,13 @@ class MyConverter extends DocumentConverter {
   }
 }
 
-const converter = new ToMd();
+const converter = new DocToMd();
 converter.register(new MyConverter(), PRIORITY_SPECIFIC);
 ```
 
 ## API
 
-### `ToMd`
+### `DocToMd`
 
 | Method | Description |
 |--------|-------------|

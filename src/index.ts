@@ -1,5 +1,5 @@
-export { ToMd, PRIORITY_SPECIFIC, PRIORITY_GENERIC } from "./tomd.js";
-export type { ToMdOptions } from "./tomd.js";
+export { DocToMd, PRIORITY_SPECIFIC, PRIORITY_GENERIC } from "./doc-to-md.js";
+export type { DocToMdOptions } from "./doc-to-md.js";
 export {
   DocumentConverter,
   type StreamInfo,
@@ -7,7 +7,7 @@ export {
   type ConvertOptions,
 } from "./base-converter.js";
 export {
-  ToMdError,
+  DocToMdError,
   UnsupportedFormatError,
   FileConversionError,
   MissingDependencyError,

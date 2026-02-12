@@ -1,11 +1,11 @@
-export class ToMdError extends Error {
+export class DocToMdError extends Error {
   constructor(message: string) {
     super(message);
-    this.name = "ToMdError";
+    this.name = "DocToMdError";
   }
 }
 
-export class UnsupportedFormatError extends ToMdError {
+export class UnsupportedFormatError extends DocToMdError {
   constructor(message = "No converter found for the given input") {
     super(message);
     this.name = "UnsupportedFormatError";
@@ -17,7 +17,7 @@ export interface FailedConversionAttempt {
   error: Error;
 }
 
-export class FileConversionError extends ToMdError {
+export class FileConversionError extends DocToMdError {
   attempts: FailedConversionAttempt[];
 
   constructor(message: string, attempts: FailedConversionAttempt[]) {
@@ -27,7 +27,7 @@ export class FileConversionError extends ToMdError {
   }
 }
 
-export class MissingDependencyError extends ToMdError {
+export class MissingDependencyError extends DocToMdError {
   constructor(dependency: string, message?: string) {
     super(message ?? `Missing dependency: ${dependency}`);
     this.name = "MissingDependencyError";
