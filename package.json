@@ -1,6 +1,6 @@
 {
   "name": "mdize",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert documents (PDF, DOCX, PPTX, XLSX, HTML, CSV, images, XML) to Markdown",
   "type": "module",
   "main": "./dist/index.js",
